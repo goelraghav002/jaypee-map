@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to JIIT - Route/Classroom Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <img src="" alt="">
+    </div>
+    <div class="home">
+        
+        <div class="heading">
+            <img src="http://www.jiit.ac.in/jiit/ETTIC/assets/img/jiit_logo.png" alt="" class="jiitLogo">
+            <h1>Welcome to JIIT-128 Classroom Finder</h1>
+            <img src="pin.png" alt="">
+        </div>
+
+        <div class="searchContainer">
+            <div class="searchBar">
+                <div>
+                    <select name="start" id="start" class="s">
+                        <option value="">Select Starting Point</option>
+                    </select>
+                </div>
+                <div>
+                    <select name="end" id="end">
+                        <option value="">Select Destination</option>
+                    </select>
+                </div>
+                <div class="search-btn">
+                    <button type="button" id="searchBtn">Search Path</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="display none">
+        <div id="path" class="path">
+            Your Path is :
+        </div>
+
+        <div class="anotherButton">
+            <button type="button" onclick="goBack()">Find Another Route</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
