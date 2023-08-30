@@ -1,55 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to JIIT - Route/Classroom Finder</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>WHERE IS MY LECTURE ?</title>
+
+	<link rel="stylesheet" href="style.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+	<link rel="icon" type="image/x-icon" href="pin.png" />
+	<link rel="stylesheet" href="groundFloor.css" />
+	<link rel="stylesheet" href="firstFloor.css" />
+	<link rel="stylesheet" href="secondFloor.css" />
 </head>
-<body>
-    <div class="hero">
-        <img src="" alt="">
-    </div>
-    <div class="home">
-        
-        <div class="heading">
-            <img src="http://www.jiit.ac.in/jiit/ETTIC/assets/img/jiit_logo.png" alt="" class="jiitLogo">
-            <h1>Welcome to JIIT-128 Classroom Finder</h1>
-            <img src="pin.png" alt="">
-        </div>
 
-        <div class="searchContainer">
-            <div class="searchBar">
-                <div>
-                    <select name="start" id="start" class="s">
-                        <option value="">Select Starting Point</option>
-                    </select>
-                </div>
-                <div>
-                    <select name="end" id="end">
-                        <option value="">Select Destination</option>
-                    </select>
-                </div>
-                <div class="search-btn">
-                    <button type="button" id="searchBtn">Search Path</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="noselect">
+	<div class="hero">
+		<img src="" alt="" />
+	</div>
 
-    <div class="display none">
-        <div id="path" class="path">
-            Your Path is :
-        </div>
+	<div class="home">
+		<div class="heading">
+			<img src="http://www.jiit.ac.in/jiit/ETTIC/assets/img/jiit_logo.png" alt="" class="jiitLogo" />
+			<h2>WELCOME TO JIIT-128 CLASSROOM FINDER</h2>
+		</div>
+		
+		<div class="choiceContainer ">
+			<img class="I" src="pin.png" alt="" />
+			<div class="choice">
+				<div class="choiceBtn">
+					<button id="cName" onclick="handlePages('cName')" type="button">Get your Classroom Name</button>
+				</div>
+				<div class="choiceBtn">
+					<button id="route" onclick="handlePages('routeFinder')" type="button">Get a route to Your Classroom</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cName none">
+			<div class="classFinder">
+					<input id="cls" type="text" id="roomNumber" oninput="handleSearch()" placeholder="Enter classroom...">
+				<div class="search-btn">
+					<button type="button" onclick="findclass()">Search</button>
+					<button type="button" onclick="goBack()">Back</button>
+				</div>
+			</div>
+			<ul id="myUL" class="list none" onload="createList()">
+			</ul>
+			<div id="displayClass" class="displayClass none">
+				Classroom Names : 
+			</div>
+		</div>
+		
+		<div class="routeFinder none">
+			<h4>DISCOVER THE SHORTEST ROUTE TO YOUR LECTURE HALL</h4>
+			<img class="I" src="pin.png" alt="" />
+			<div class="searchBar">
+				<div>
+					<select name="start" id="start" class="s">
+						<option value="">Select Starting Point</option>
+					</select>
+				</div>
+				<div>
+					<select name="end" id="end">
+						<option value="">Select Destination</option>
+					</select>
+				</div>
+				<div class="search-btn">
+					<button type="button" id="searchBtn">Search Path</button>
+				</div>
 
-        <div class="anotherButton">
-            <button type="button" onclick="goBack()">Find Another Route</button>
-        </div>
-    </div>
+				<div class="search-btn">
+					<button type="button" onclick="goBack()">Back</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <script src="index.js"></script>
-    <script src="script.js"></script>
+	<div class="display none">
+		<div class="buttons">
+			<div id="path" class="path">
+				<strong>Intermediate Classroom List : </strong>
+			</div>
+			
+			<div class="anotherButton">
+				<button type="button" onclick="showOnMap('open')">Show on Map</button>
+			</div>
+
+			<div class="anotherButton">
+				<button type="button" onclick="goBack()">Back to Home</button>
+			</div>
+		</div>
+
+		<div id="groundFloor" class="groundFloor none">
+			<div class="blur"></div>
+			<h1>Ground Floor</h1>
+			<div id="Basement" class="ground ground52">Basement</div>
+			<div id="Workshop-Lab" class="ground ground50">Workshop Lab</div>
+			<div id="Ground" class="ground ground19">Ground</div>
+			<div id="ground37" class="ground ground37"></div>
+			<div id="CL-1" class="ground ground22">CL1</div>
+			<div id="EMI-Lab" class="ground ground32">EMI Lab</div>
+			<div id="Annapurna" class="ground ground9">Annapurna</div>
+			<div id="ground10" class="ground ground10"></div>
+			<div id="Cafe" class="ground ground12">Cafe</div>
+			<div id="Stairs-9" class="ground ground13">9</div>
+			<div id="LRC" class="ground ground14">LRC</div>
+			<div id="Admin" class="ground ground15">Admin Department</div>
+			<div id="Physics-Lab" class="ground ground17">Physics Lab</div>
+			<div id="ground24" class="ground ground24"></div>
+			<div id="Badminton-Court" class="ground ground26">Badminton Court</div>
+			<div id="Stairs-10" class="ground ground27">10</div>
+			<div id="O.A.T." class="ground ground28">O.A.T.</div>
+			<div id="Innovation-Hub" class="ground ground29">Innovation Hub</div>
+			<div id="Ground-Floor-Left-Washroom" class="ground ground322">
+				Left Washroom
+			</div>
+			<div id="Ground-Floor-Right-Washroom" class="ground ground33">
+				Right Washroom
+			</div>
+			<div id="CL-2" class="ground ground36">CL2</div>
+			<div id="gline3" class="gline gline3"></div>
+			<div id="gline7" class="gline gline7"></div>
+			<div id="gline18" class="gline gline18"></div>
+			<div id="gline22" class="gline gline22"></div>
+			<div id="gline26" class="gline gline26"></div>
+			<div id="gline28" class="gline gline28"></div>
+			<!-- <div id="gline29" class="gline gline29"></div> -->
+
+			<div id="Stairs-7" class="ground ground39">7</div>
+			<div id="Open-Space" class="ground ground51">Open Space</div>
+			<div id="gline39" class="gline gline39"></div>
+			<div id="Stairs-8" class="ground ground42">8</div>
+			<div id="Stairs-5" class="ground ground45">5</div>
+			<div id="Multi-Purpose-Hall" class="ground ground46">
+				Multi Purpose Hall
+			</div>
+			<div id="gline42" class="gline gline42"></div>
+			<div id="gline43" class="gline gline43"></div>
+			<div id="gline44" class="gline gline44"></div>
+			<div id="gline45" class="gline gline45"></div>
+			<div id="gline46" class="gline gline46"></div>
+			<div id="gline47" class="gline gline47"></div>
+			<div id="gline48" class="gline gline48"></div>
+			<div id="gline49" class="gline gline49"></div>
+			<div id="gline50" class="gline gline50"></div>
+			<div id="gline51" class="gline gline51"></div>
+			<div id="gline52" class="gline gline52"></div>
+			<div id="gline53" class="gline gline53"></div>
+			<div id="gline54" class="gline gline54"></div>
+			<div id="gline55" class="gline gline55"></div>
+			<div id="gline56" class="gline gline56"></div>
+			<div id="gline58" class="gline gline58"></div>
+			<div id="gline59" class="gline gline59"></div>
+			<div id="gline60" class="gline gline60"></div>
+			<div id="gline61" class="gline gline61"></div>
+			<div id="gline62" class="gline gline62"></div>
+			<div id="gline63" class="gline gline63"></div>
+			<div id="gline64" class="gline gline64"></div>
+			<div id="Stairs-6" class="ground ground47">6</div>
+			<div id="Small-Gate" class="ground ground48">Gate</div>
+			<div id="Temple" class="ground ground49">Temple</div>
+			<div id="gline57" class="gline gline57"></div>
+			<div id="gline65" class="gline gline65"></div>
+			<div id="gline66" class="gline gline66"></div>
+			<div id="gline67" class="gline gline67"></div>
+			<div id="Old-Cafe" class="ground ground61">Old Cafe</div>
+			<div id="Entry" class="ground ground62">Entry</div>
+		</div>
+		<div id="firstFloor" class="firstFloor none">
+			<h1>First Floor</h1>
+			<div id="F117" class="rectangle rectangle2">LT-2</div>
+			<div id="F101" class="rectangle rectangle32">Left Washroom</div>
+			<div id="F111" class="rectangle rectangle4">CR-1</div>
+			<div id="F113" class="rectangle rectangle3">CR-2</div>
+			<div id="rectangle5" class="rectangle rectangle5"></div>
+			<div id="F118" class="rectangle rectangle6">LT-1</div>
+			<div id="F125" class="rectangle rectangle7">SR05</div>
+			<div id="F132" class="rectangle rectangle8">M.M.L. Lab</div>
+			<div id="F130" class="rectangle rectangle9">Basic Electronics Lab</div>
+			<div id="F126" class="rectangle rectangle10">T3</div>
+			<div id="F127" class="rectangle rectangle11">T2</div>
+			<div id="rectangle12" class="rectangle rectangle12"></div>
+			<div id="F108" class="rectangle rectangle13">6</div>
+			<div id="F131" class="rectangle rectangle14">Faculty Block ECE</div>
+			<div id="F124" class="rectangle rectangle15">EDD Drawing Hall</div>
+			<div id="F123" class="rectangle rectangle16">CR-7</div>
+			<div id="F121" class="rectangle rectangle17">T4</div>
+			<div id="F158" class="rectangle rectangle19">Project Lab CSE</div>
+
+			<div id="F137" class="rectangle rectangle21">CR-8</div>
+			<div id="F157" class="rectangle rectangle23">Project Lab ECE</div>
+			<div id="F138" class="rectangle rectangle22">CR-9</div>
+			<div id="F140" class="rectangle rectangle24">CICR Lab</div>
+			<div id="F142" class="rectangle rectangle25">VLSI Project Lab</div>
+
+			<div id="rectangle26" class="rectangle rectangle26"></div>
+			<div id="F105" class="rectangle rectangle27">3</div>
+			<div id="F153" class="rectangle rectangle28">CR-45</div>
+			<div id="F151" class="rectangle rectangle29">CL-3</div>
+			<div id="F148" class="rectangle rectangle30">CR-44</div>
+
+			<div id="F154" class="rectangle rectangle31">CR-60</div>
+			<div id="F101" class="rectangle rectangle32">Left Washroom</div>
+			<div id="F102" class="rectangle rectangle33">Right Washroom</div>
+			<div id="F110" class="rectangle rectangle34">8</div>
+			<div id="F104" class="rectangle rectangle35">2</div>
+			<div id="F116" class="rectangle rectangle36">T1</div>
+			<div id="rectangle37" class="rectangle rectangle37"></div>
+			<div id="rectangle38" class="rectangle rectangle38"></div>
+			<div id="F109" class="rectangle rectangle39">7</div>
+			<div id="rectangle40" class="rectangle rectangle40"></div>
+			<div id="F150" class="rectangle rectangle41">Language Lab</div>
+			<div id="F106" class="rectangle rectangle42">4</div>
+			<div id="F128" class="rectangle rectangle43">Server Room</div>
+			<div id="F107" class="rectangle rectangle44">5</div>
+			<div id="F103" class="rectangle rectangle45">1</div>
+			<div id="F112" class="rectangle rectangle46">
+				Multi Purpose Hall(first Floor)
+			</div>
+			<div id="rectangle48" class="rectangle rectangle48"></div>
+			<div id="F133" class="rectangle rectangle18">Communication Lab</div>
+			<div id="F134" class="rectangle rectangle20">DSP Lab</div>
+
+			<div id="fline1" class="fline fline1"></div>
+			<div id="fline2" class="fline fline2"></div>
+			<div id="fline3" class="fline fline3"></div>
+			<div id="fline4" class="fline fline4"></div>
+			<div id="fline5" class="fline fline5"></div>
+			<div id="fline6" class="fline fline6"></div>
+			<div id="fline7" class="fline fline7"></div>
+			<div id="fline8" class="fline fline8"></div>
+			<div id="fline9" class="fline fline9"></div>
+			<div id="fline10" class="fline fline10"></div>
+			<div id="fline11" class="fline fline11"></div>
+			<div id="fline13" class="fline fline13"></div>
+			<div id="fline14" class="fline fline14"></div>
+			<div id="fline15" class="fline fline15"></div>
+			<div id="fline16" class="fline fline16"></div>
+			<div id="fline17" class="fline fline17"></div>
+			<div id="fline18" class="fline fline18"></div>
+			<div id="fline20" class="fline fline20"></div>
+			<div id="fline21" class="fline fline21"></div>
+			<div id="fline22" class="fline fline22"></div>
+			<div id="fline24" class="fline fline24"></div>
+			<div id="fline25" class="fline fline25"></div>
+			<div id="fline26" class="fline fline26"></div>
+			<div id="fline27" class="fline fline27"></div>
+			<div id="fline28" class="fline fline28"></div>
+			<div id="fline29" class="fline fline29"></div>
+			<div id="fline30" class="fline fline30"></div>
+			<div id="fline31" class="fline fline31"></div>
+			<div id="fline32" class="fline fline32"></div>
+			<div id="fline33" class="fline fline33"></div>
+			<div id="fline35" class="fline fline35"></div>
+			<div id="fline36" class="fline fline36"></div>
+			<div id="fline37" class="fline fline37"></div>
+			<div id="fline38" class="fline fline38"></div>
+			<div id="fline39" class="fline fline39"></div>
+			<div id="fline40" class="fline fline40"></div>
+			<div id="fline41" class="fline fline41"></div>
+			<div id="fline42" class="fline fline42"></div>
+			<div id="fline43" class="fline fline43"></div>
+			<div id="fline44" class="fline fline44"></div>
+			<div id="fline51" class="fline fline51"></div>
+			<div id="fline52" class="fline fline52"></div>
+			<div id="fline53" class="fline fline53"></div>
+			<div id="fline54" class="fline fline54"></div>
+			<div id="fline55" class="fline fline55"></div>
+			<div id="fline56" class="fline fline56"></div>
+			<div id="fline57" class="fline fline57"></div>
+			<div id="fline58" class="fline fline58"></div>
+			<div id="fline59" class="fline fline59"></div>
+			<div id="fline60" class="fline fline60"></div>
+			<div id="fline61" class="fline fline61"></div>
+			<div id="fline62" class="fline fline62"></div>
+			<div id="fline63" class="fline fline63"></div>
+			<div id="fline64" class="fline fline64"></div>
+			<div id="fline65" class="fline fline65"></div>
+			<div id="fline66" class="fline fline66"></div>
+			<div id="fline45" class="fline fline45"></div>
+			<div id="fline67" class="fline fline67"></div>
+			<div id="fline68" class="fline fline68"></div>
+			<div id="fline69" class="fline fline69"></div>
+			<div id="fline70" class="fline fline70"></div>
+			<div id="fline71" class="fline fline71"></div>
+			<div id="fline72" class="fline fline72"></div>
+			<div id="fline73" class="fline fline73"></div>
+			<div id="fline74" class="fline fline74"></div>
+			<div id="fline75" class="fline fline75"></div>
+			<div id="fline76" class="fline fline76"></div>
+			<div id="fline77" class="fline fline77"></div>
+			<div id="fline78" class="fline fline78"></div>
+			<div id="fline79" class="fline fline79"></div>
+		</div>
+		<div id="SecondFloor" class="secondFloor none">
+			<h1>Second Floor</h1>
+			<div id="S217" class="room room1">CR-3</div>
+			<div id="S219" class="room room3">Humanities Lab</div>
+			<div id="S224" class="room room34">Analog Digital Lab</div>
+			<div id="S226" class="room room2">CR-4</div>
+			<div id="S225" class="room room11">T5</div>
+			<div id="S229" class="room room10">T6</div>
+			<div id="S228" class="room room6">CR-5</div>
+			<div id="S230" class="room room7">CR-6</div>
+			<div id="S234" class="room room17">T8</div>
+			<div id="S237" class="room room16">Electromagnetics Lab</div>
+			<div id="S238" class="room room9">Microcontroller Lab</div>
+			<div id="S240" class="room room8">Mobile Technology Lab</div>
+			<div id="S241" class="room room18">CR53</div>
+			<div class="room room12"></div>
+			<div id="S203" class="room room13">1</div>
+			<div id="S208" class="room room14">Faculty Block Other Subject</div>
+			<div id="S207" class="room room15">Faculty Block CSE</div>
+			<div id="S264" class="room room19">P and D Computing Lab</div>
+			<div id="S242" class="room room20">CR-54</div>
+			<div id="S243" class="room room21">CR-46</div>
+			<div id="S263" class="room room22">Information Security Lab</div>
+			<div id="S244" class="room room23">LT-9</div>
+			<div id="S246" class="room room24">TR-09</div>
+			<div id="S209" class="room room25">HSS Faculty Block</div>
+			<div class="room room26"></div>
+			<div id="S205" class="room room27">3</div>
+			<div id="S259" class="room room28">LT-4</div>
+			<div id="S257" class="room room29">LT-6</div>
+			<div id="S254" class="room room30">LT-3</div>
+			<div id="S255" class="room room31">LT-5</div>
+			<div id="S201" class="room room32">Left Washroom</div>
+			<div id="S202" class="room room33">Right Washroom</div>
+			<div id="S206" class="room room35">4</div>
+			<div id="S204" class="room room36">2</div>
+			<div class="room room37"></div>
+
+			<div class="sline sline1"></div>
+			<div class="sline sline2"></div>
+			<div class="sline sline3"></div>
+			<div class="sline sline4"></div>
+			<div class="sline sline5"></div>
+			<div class="sline sline6"></div>
+			<div class="sline sline7"></div>
+			<div class="sline sline8"></div>
+			<div class="sline sline9"></div>
+			<div class="sline sline10"></div>
+			<div class="sline sline11"></div>
+			<div class="sline sline12"></div>
+			<div class="sline sline13"></div>
+			<div class="sline sline14"></div>
+			<div class="sline sline15"></div>
+			<div class="sline sline16"></div>
+			<div class="sline sline17"></div>
+			<div class="sline sline18"></div>
+			<div class="sline sline19"></div>
+			<div class="sline sline20"></div>
+			<div class="sline sline21"></div>
+			<div class="sline sline22"></div>
+			<div class="sline sline24"></div>
+			<div class="sline sline25"></div>
+			<div class="sline sline26"></div>
+			<div class="sline sline27"></div>
+			<div class="sline sline28"></div>
+			<div class="sline sline29"></div>
+			<div class="sline sline30"></div>
+			<div class="sline sline31"></div>
+			<div class="sline sline32"></div>
+			<div class="sline sline33"></div>
+			<div class="sline sline34"></div>
+			<div class="sline sline35"></div>
+			<div class="sline sline36"></div>
+			<div class="sline sline37"></div>
+			<div class="sline sline38"></div>
+			<div class="sline sline39"></div>
+			<div class="sline sline40"></div>
+			<div class="sline sline41"></div>
+			<div class="sline sline42"></div>
+			<div class="sline sline43"></div>
+			<div class="sline sline44"></div>
+			<div class="sline sline45"></div>
+		</div>
+	</div>
+
+	<script src="index.js"></script>
+	<script src="script.js"></script>
 </body>
+
 </html>

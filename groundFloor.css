@@ -1,0 +1,494 @@
+.groundFloor {
+	position: relative;
+	background-color: #000000;
+	border: 10px solid white;
+	height: 900px;
+	color: greenyellow;
+	width: 1480px;
+	padding: 0px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.ground {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #fefdfd;
+	background-color: black;
+	color: greenyellow;
+}
+
+.ground52 {
+	color: greenyellow;
+	height: 112px;
+	width: 678px;
+	top: 572px;
+	left: 340px;
+	border: none;
+}
+
+.ground50 {
+	height: 140px;
+	width: 96px;
+	left: 215px;
+	top: 572px;
+}
+
+.ground19 {
+	height: 152px;
+	width: 1249px;
+	top: 139px;
+	left: 95px;
+}
+
+.ground22 {
+	height: 80px;
+	width: 192px;
+	top: 335px;
+	left: 163px;
+}
+
+.ground51 {
+	height: 190px;
+	width: 118px;
+	top: 335px;
+	left: 597px;
+}
+
+.ground37 {
+	height: 223px;
+	width: 87px;
+	top: 335px;
+	left: 95px;
+}
+
+.ground22 {
+	height: 80px;
+	width: 192px;
+	top: 335px;
+	left: 163px;
+}
+
+.ground32 {
+	height: 145px;
+	width: 108px;
+	top: 417.5px;
+	left: 163px;
+}
+
+.ground9 {
+	height: 190px;
+	width: 522px;
+	top: 335px;
+	left: 716px;
+}
+
+.ground10 {
+	height: 39px;
+	width: 60px;
+	top: 487px;
+	left: 294.5px;
+}
+
+.ground12 {
+	height: 132px;
+	width: 189px;
+	top: 393px;
+	left: 1049px;
+}
+
+.ground13 {
+	height: 80.00000762939453px;
+	width: 25.000001907348633px;
+	transform: rotate(90deg);
+	top: 688px;
+	left: 328px;
+}
+
+.ground14 {
+	height: 122px;
+	width: 167px;
+	top: 646px;
+	left: 716px;
+}
+
+.ground15 {
+	height: 122px;
+	width: 142px;
+	top: 646px;
+	left: 452px;
+}
+
+.ground17 {
+	height: 190px;
+	width: 106px;
+	top: 335px;
+	left: 488px;
+}
+
+.ground24 {
+	height: 118px;
+	width: 108px;
+	top: 335px;
+	left: 1236px;
+}
+
+.ground26 {
+	height: 87px;
+	width: 230px;
+	top: 438px;
+	left: 816px;
+}
+
+.ground27 {
+	height: 27px;
+	width: 99px;
+	top: 699px;
+	left: 915px;
+}
+
+.ground28 {
+	height: 122px;
+	width: 203px;
+	top: 646px;
+	left: 1141px;
+}
+
+.ground61 {
+	height: 37px;
+	width: 133px;
+	top: 646px;
+	left: 1211px;
+}
+
+.ground29 {
+	height: 122px;
+	width: 160px;
+	top: 646px;
+	left: 979px;
+}
+
+.ground322 {
+	height: 55px;
+	width: 87px;
+	top: 562px;
+	left: 95px;
+}
+
+.ground33 {
+	height: 81px;
+	width: 108px;
+	top: 444px;
+	left: 1236px;
+}
+
+.ground36 {
+	height: 80px;
+	width: 155.5px;
+	top: 335px;
+	left: 330px;
+}
+
+.ground39 {
+	height: 24px;
+	width: 89px;
+	top: 663px;
+	left: 865px;
+}
+
+.ground42 {
+	height: 24px;
+	width: 81px;
+	top: 527px;
+	left: 1263px;
+}
+
+.ground45 {
+	height: 92.00000762939453px;
+	width: 25.000003814697266px;
+	transform: rotate(90deg);
+	top: 529px;
+	left: 212.5px;
+}
+
+.ground46 {
+	height: 117px;
+	width: 209px;
+	top: 651px;
+	left: 95px;
+}
+
+.ground47 {
+	height: 114px;
+	width: 27px;
+	transform: rotate(90deg);
+	top: 617px;
+	left: 310px;
+}
+
+.ground48 {
+	height: 15px;
+	width: 15;
+	top: 753px;
+	left: 394px;
+}
+
+.ground49 {
+	width: 42px;
+	height: 27px;
+	top: 590px;
+	left: 179px;
+}
+
+.ground62 {
+	border: none;
+	width: 42px;
+	height: 27px;
+	top: 741px;
+	left: 630px;
+}
+
+/* glineS */
+.gline {
+	position: absolute;
+	border-top: 2px solid #fcfcfc;
+}
+
+.gline42 {
+	width: 74px;
+	transform: rotate(90deg);
+	top: 480px;
+	left: 258px;
+}
+
+.gline43 {
+	width: 81px;
+	transform: rotate(-90deg);
+	top: 483px;
+	left: 418px;
+}
+
+.gline44 {
+	width: 30.740737915039062px;
+	transform: rotate(-90deg);
+	top: 701.97px;
+	left: 368.48px;
+}
+
+.gline45 {
+	width: 163px;
+	transform: rotate(0deg);
+	top: 444px;
+	left: 295px;
+}
+
+.gline39 {
+	width: 98px;
+	transform: rotate(0deg);
+	top: 770px;
+	left: 881px;
+}
+
+.gline3 {
+	width: 47px;
+	top: 770px;
+	left: 588px;
+}
+
+.gline46 {
+	width: 29.5px;
+	transform: rotate(90deg);
+	top: 713px;
+	left: 931px;
+}
+
+.gline47 {
+	width: 29.5px;
+	transform: rotate(90deg);
+	top: 714px;
+	left: 916px;
+}
+
+.gline48 {
+	width: 29.5px;
+	transform: rotate(90deg);
+	top: 714px;
+	left: 946px;
+}
+
+.gline49 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 676px;
+	left: 869px;
+}
+
+.gline50 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 676px;
+	left: 886px;
+}
+
+.gline51 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 676px;
+	left: 906px;
+}
+
+.gline52 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 677px;
+	left: 925px;
+}
+
+.gline53 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 540px;
+	left: 1317px;
+}
+
+.gline54 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 539px;
+	left: 1301px;
+}
+
+.gline55 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 541px;
+	left: 1284px;
+}
+
+.gline56 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 541px;
+	left: 1267px;
+	border-top: 2px solidwhite;
+}
+
+.gline57 {
+	width: 29.5px;
+	transform: rotate(90deg);
+	top: 675px;
+	left: 342px;
+}
+
+.gline58 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 729px;
+	left: 348px;
+}
+
+.gline59 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 729px;
+	left: 329px;
+}
+
+.gline60 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 729px;
+	left: 311px;
+}
+
+.gline61 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 576px;
+	left: 185px;
+}
+
+.gline62 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 576px;
+	left: 203px;
+}
+
+.gline63 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 575px;
+	left: 222px;
+}
+
+.gline64 {
+	width: 26.5px;
+	transform: rotate(90deg);
+	top: 576px;
+	left: 242px;
+}
+
+.gline65 {
+	width: 29.5px;
+	transform: rotate(90deg);
+	top: 675px;
+	left: 318px;
+}
+
+.gline66 {
+	width: 29.5px;
+	transform: rotate(90deg);
+	top: 675px;
+	left: 294px;
+}
+
+.gline67 {
+	width: 29.5px;
+	transform: rotate(90deg);
+	top: 674px;
+	left: 272px;
+}
+
+.gline7 {
+	width: 42px;
+	transform: rotate(-90deg);
+	top: 639px;
+	left: 75px;
+}
+
+.gline18 {
+	width: 47px;
+	transform: rotate(0deg);
+	top: 770px;
+	left: 677px;
+}
+
+.gline22 {
+	width: 191px;
+	transform: rotate(0deg);
+	top: 770px;
+	left: 296px;
+}
+
+.gline26 {
+	width: 108.38292300701141px;
+	transform: rotate(90deg);
+	top: 600.97px;
+	left: 1292.6px;
+}
+
+.gline28 {
+	width: 27px;
+	transform: rotate(-91deg);
+	top: 703px;
+	left: 902px;
+}
+
+.gline29 {
+	width: 128px;
+	left: 1343px;
+	top: 541px;
+}
