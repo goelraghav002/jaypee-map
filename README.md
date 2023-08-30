@@ -6,4 +6,3 @@ It uses the concept of Graph data structure to add classrooms and its connection
 
 You can access the website through the following Link:
 
-https://coolwednesday.github.io/WHERE_IS_MY_LECTURE/
