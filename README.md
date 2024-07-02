@@ -5,4 +5,4 @@ The project is designed around Jaypee Institute Of Information Technology-128 ma
 It uses the concept of Graph data structure to add classrooms and its connections and the djisktra algorithm to find the shortest route.
 
 You can access the website through the following Link:
-
+https://goelraghav002.github.io/jaypee-map/
